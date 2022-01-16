@@ -78,7 +78,7 @@ This project was a code challenge in my journey to learn Python. I'm iterating t
 ## Usage
 
 <!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources. -->
-This project is a loan application that propmts the user to enter financial and private data to determine if an applicant qualifies for a loan and the type of loan the applicant qualifies for. It also asks the user to save the qualifying loans as a new CSV file.
+This project is a loan application that prompts the user to enter financial and private data to determine if an applicant qualifies for a loan and the type of loan the applicant qualifies for. It also asks the user to save the qualifying loans as a new CSV file.
 
 <!-- ROADMAP -->
 ## Roadmap

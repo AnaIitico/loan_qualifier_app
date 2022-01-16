@@ -6,7 +6,10 @@ import fire
 import questionary
 from pathlib import Path
 
-from qualifier.utils.fileio import load_csv
+from qualifier.utils.fileio import (
+    load_csv,
+    save_csv
+)
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -103,8 +106,18 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+    # Enter the new file name to be saved by the application
+    name = questionary.text("""Enter the new file name by following these rules:
+    1. Use lowercase letters
+    2. Don't leave empty spaces between words.
+    3. Use the underscore _ as a separator.
+    4. Include .csv at the end of the name.
+    5. For example: john_doe.csv"""
+    ).ask()
+    
+    output_path = Path(f"data/{name}")
+    
+    return save_csv(output_path, qualifying_loans)
 
 
 def run():
