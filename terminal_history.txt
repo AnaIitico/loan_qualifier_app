@@ -1,0 +1,50 @@
+  492  ls
+  493  cd Jose
+  494  ls
+  495  cd ..
+  496  cd ..
+  497  cd ProgramData\
+  498  cd ProgramData/Anaconda3
+  499  conda update conda
+  500  ls -la
+  501  conda activate dev
+  502  git remote add origin https://github.com/AnaIitico/loan_qualifier_app.git
+  503  git branch -M main
+  504  ls
+  505  ls -a
+  506  git init
+  507  git remote add origin https://github.com/AnaIitico/loan_qualifier_app.git
+  508  git branch -M main
+  509  git add .
+  510  git commit -m "initial commit"
+  511  git status
+  512  git push -u origin main
+  513  git status
+  514  git init
+  515  git remote add origin https://github.com/AnaIitico/loan_qualifier_app.git
+  516  git branch -M main
+  517  git add .
+  518  git status
+  519  ]git commit -m "initial commit"
+  520  git push -u origin main
+  521  git commit -m "initial commit"
+  522  git push -u origin main
+  523  python app.py
+  524  python app.py
+  525  python app.py
+  526  python app.py
+  527  python app.py
+  528  python app.py
+  529  git add .
+  530  git commit -m "updated app.py save_qualifying_loans function and added save_csv function to fileio.py"
+  531  git push
+  532  history >50
+  533  history>50
+  534  history > 50 terminal_50.txt
+  535  clear
+  536  history > 50 terminal_50.txt
+  537  history>50 terminal_50.txt
+  538  githistory > 50 terminal_50.txt
+  539  git status
+  540  ls -a
+  541  history 50 > terminal_history.txt
