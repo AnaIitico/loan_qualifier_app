@@ -98,11 +98,12 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     print(f"Found {len(bank_data_filtered)} qualifying loans")
 
     return bank_data_filtered
-
+    
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
-
+        Provides instructions for the file naming convention
+        
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
@@ -114,6 +115,12 @@ def save_qualifying_loans(qualifying_loans):
     4. Include .csv at the end of the name.
     5. For example: john_doe.csv"""
     ).ask()
+
+    if name == "":
+        print("")
+        print("You must enter a file name")
+        print("")
+        save_qualifying_loans(qualifying_loans)
     
     output_path = Path(f"data/{name}")
     

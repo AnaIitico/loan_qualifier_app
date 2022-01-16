@@ -39,7 +39,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project was a code challenge in my journey to learn Python. I'm iterating through lists and dictionaries in oder to calculate present value and analyzing data to provide information to make buying decisions.
+This project is a loan application that prompts the user to enter financial and private data to determine if an applicant qualifies for a loan and the type of loan the applicant qualifies for. It also asks the user to save the qualifying loans as a new CSV file
 
 ### Built With
 
