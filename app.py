@@ -115,7 +115,7 @@ def save_qualifying_loans(qualifying_loans):
 
     if question == False:
         print("")
-        print("Thank you for using the app")
+        print("Thank you for using the app. Goodbye!")
         quit()
     else:
         # Enter the new file name to be saved by the application

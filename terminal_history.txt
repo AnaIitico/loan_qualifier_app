@@ -1,25 +1,3 @@
-  546  ls -a
-  547  clear
-  548  python app.py
-  549  python app.py
-  550  python app.py
-  551  python app.py
-  552  python app.py
-  553  clear
-  554  python app.py
-  555  clear
-  556  python app.py
-  557  python app.py
-  558  python app.py
-  559  python app.py
-  560  python app.py
-  561  python app.py
-  562  git add .
-  563  clear
-  564  git commit -m "added logic to app.py save_qualifying_loans function to check for empty filename and added description comments, added logic to fileio.py save_csv function to notify user when file is saved also added a header to the file and comments describing the function, added .gitignore file, updated terminal_history.txt"
-  565  git status
-  566  git push
-  567  history 50 > terminal_history.txt
   568  git add .
   569  git commit -m "updated terminal_history.txt"
   570  git push
@@ -48,3 +26,25 @@
   593  git push
   594  terminal_history.txt
   595  history 50 > terminal_history.txt
+  596  git add .
+  597  git commit -m "updated terminal_history.txt"
+  598  git push
+  599  git status
+  600  git add .
+  601  git commit -m "deleted file None from data folder"
+  602  git push
+  603  python app.py
+  604  python app.py
+  605  python app.py
+  606  python app.py
+  607  clear
+  608  python app.py
+  609  python app.py
+  610  clear
+  611  python app.py
+  612  python app.py
+  613  git add .
+  614  git commit -m "included the questionary.confirm method into the save_qualifying_loans function and added logic to save the filename if the user continues, fixed template literal in save_csv function, updated screenshots and code snippets in README.md"
+  615  git push'
+  616  git push
+  617  history 50 > terminal_history.txt
