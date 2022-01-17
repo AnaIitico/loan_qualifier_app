@@ -85,23 +85,22 @@ This project is a loan application that prompts the user to enter financial and 
 
 Here are some screenshots and code snippets of the working app
 
-Confirm Dialogue
-
+#### Confirm Dialogue - Enter No and exit the program
 ![Confirm Dialogue Screen Shot][confirm-screenshot]
 
-
-Qualified Loans
+#### Qualified Loans - saves to the qualified_loans folder
 ![Qualified Loan Screen Shot][qualifiedloan-screenshot]
 
 
-Unqualified Loans
+#### Unqualified Loans - saves to the unqualified_loans folder
 ![Unqualified Loan Screen Shot][unqualifiedloan-screenshot]
 
 
-Enter Name
+#### Enter Name - forces a retry. User can then enter y/n
 ![Enter Name Screen Shot][entername-screenshot]
 
-* 
+
+#### Save Function
   ```sh
   def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
@@ -142,7 +141,7 @@ Enter Name
             save_csv(output_path, qualifying_loans)
    ```
 
-* 
+#### Save to CSV Function 
   ```sh
   def save_csv(output_path, qualifying_loans):
     """Saves the CSV file from path provided by user input.
