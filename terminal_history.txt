@@ -1,35 +1,3 @@
-  568  git add .
-  569  git commit -m "updated terminal_history.txt"
-  570  git push
-  571  clear
-  572  python app.py
-  573  clear
-  574  python app.py
-  575  python app.py
-  576  clear
-  577  python app.py
-  578  clear
-  579  python app.py
-  580  clear
-  581  python app.py
-  582  clear
-  583  python app.py
-  584  clear
-  585  git add. 
-  586  clear
-  587  git status
-  588  git add .
-  589  git commit -m "added a results folder which includes qualified_loans and unqualified_loans folders to separe the results. Added logic to app.py save_qualifying_loans function to determine the path according to the results, also added screenshots to README.md Roadmap section"
-  590  git push
-  591  git add .
-  592  git commit -m "fixed screenshot path on README.md and added code snippets"
-  593  git push
-  594  terminal_history.txt
-  595  history 50 > terminal_history.txt
-  596  git add .
-  597  git commit -m "updated terminal_history.txt"
-  598  git push
-  599  git status
   600  git add .
   601  git commit -m "deleted file None from data folder"
   602  git push
@@ -48,3 +16,35 @@
   615  git push'
   616  git push
   617  history 50 > terminal_history.txt
+  618  git add .
+  619  git commit -m "updated terminal_history.txt"
+  620  git push
+  621  clear
+  622  python app.py
+  623  clear
+  624  python app.py
+  625  clear
+  626  python app.py
+  627  clear
+  628  python app.py
+  629  clear
+  630  python app.py
+  631  git add .
+  632  git commit -m "updated README.md screenshots and code snippets"
+  633  git push
+  634  git status
+  635  clear
+  636  python app.py
+  637  clear
+  638  python app.py
+  639  python app.py
+  640  clear
+  641  python app.py
+  642  python app.py
+  643  clear
+  644  python app.py
+  645  python app.py
+  646  git add .
+  647  git commit -m "fixed an issue with def save_qualifying_loans not saving unqualified loans"
+  648  git push
+  649  history 50 > terminal_history.txt
