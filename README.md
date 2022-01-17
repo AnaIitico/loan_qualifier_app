@@ -83,13 +83,77 @@ This project is a loan application that prompts the user to enter financial and 
 <!-- ROADMAP -->
 ## Roadmap
 
-Here are some screenshots of the working app saving qualified loans, unqualified loans, and forcing the user to enter the filename.
+Here are some screenshots and code snippets of the working app
 
-[![Qualified Loan Screen Shot][qualified-loan]][qualified-loan-url]
+Qualified Loans
+![Qualified Loan Screen Shot][qualifiedloan-screenshot]
 
-[![Unqualified Loan Screen Shot][unqualified-loan]][unqualified-loan-url]
 
-[![Enter Name Screen Shot][enter-name]][enter-name-url]
+Unqualified Loans
+![Unqualified Loan Screen Shot][unqualifiedloan-screenshot]
+
+
+Enter Name
+![Enter Name Screen Shot][entername-screenshot]
+
+* 
+  ```sh
+  def save_qualifying_loans(qualifying_loans):
+    """Saves the qualifying loans to a CSV file.
+        Provides instructions for the file naming convention
+        
+    Args:
+        qualifying_loans (list of lists): The qualifying bank loans.
+    """
+   # Enter the new file name to be saved by the application
+    name = questionary.text("""Enter the new file name by following these rules:
+    1. Use lowercase letters
+    2. Don't leave empty spaces between words.
+    3. Use the underscore _ as a separator.
+    4. Include .csv at the end of the name.
+    5. For example: john_doe.csv"""
+    ).ask()
+
+    if name == "":
+        print("")
+        print("You must enter a file name")
+        print("")
+        save_qualifying_loans(qualifying_loans)
+    
+    if len(qualifying_loans) == 0:
+        output_path = Path(f"results/unqualified_loans/{name}")
+    else:
+        output_path = Path(f"results/qualified_loans/{name}")
+    
+    return save_csv(output_path, qualifying_loans)
+   ```
+
+* 
+  ```sh
+  def save_csv(output_path, qualifying_loans):
+    """Saves the CSV file from path provided by user input.
+        Checks to make sure the file was written and notifies the user
+
+    Args:
+        output_path (Path): The csv file output path from user input.
+        qualifying_loans : List of qualifying loans from calculations.
+
+    Saves:
+        A list that contains the rows of qualifying loans for a customer.
+
+    """
+    header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
+    with open(output_path, 'w', newline = '') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(header)
+
+        for loans in qualifying_loans:
+            csvwriter.writerow(loans)
+        if os.path.isfile(output_path):
+            print(f'The file {csvfile.name} was successfully written')
+        else:
+            print('The file {output_path} was not written')
+  ```
 
 See the [open issues](https://github.com/AnaIitico/loan_qualifier_app/issues) for a list of proposed features (and known issues).
 
@@ -137,6 +201,6 @@ Project Link: [https://github.com/AnaIitico/loan_qualifier_app](https://github.c
 [license-url]:  -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/josetollinchi/
-[qualified-loan-url]: https://github.com/AnaIitico/loan_qualifier_app/tree/main/images/qualified_loan.JPG
-[unqualified-loan-url]: https://github.com/AnaIitico/loan_qualifier_app/tree/main/images/unqualified_loan.JPG
-[enter-name-url]: https://github.com/AnaIitico/loan_qualifier_app/tree/main/images/enter_name.JPG
+[qualifiedloan-screenshot]: /images/qualified_loan.JPG
+[unqualifiedloan-screenshot]: /images/unqualified_loan.JPG
+[entername-screenshot]: /images/enter_name.JPG
