@@ -136,6 +136,7 @@ Here are some screenshots and code snippets of the working app
         
         if len(qualifying_loans) == 0:
             output_path = Path(f"results/unqualified_loans/{name.lower()}")
+            save_csv(output_path, qualifying_loans)
         else:
             output_path = Path(f"results/qualified_loans/{name.lower()}")
             save_csv(output_path, qualifying_loans)
