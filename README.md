@@ -83,6 +83,14 @@ This project is a loan application that prompts the user to enter financial and 
 <!-- ROADMAP -->
 ## Roadmap
 
+Here are some screenshots of the working app saving qualified loans, unqualified loans, and forcing the user to enter the filename.
+
+[![Qualified Loan Screen Shot][qualified-loan]][qualified-loan-url]
+
+[![Unqualified Loan Screen Shot][unqualified-loan]][unqualified-loan-url]
+
+[![Enter Name Screen Shot][enter-name]][enter-name-url]
+
 See the [open issues](https://github.com/AnaIitico/loan_qualifier_app/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
@@ -129,3 +137,6 @@ Project Link: [https://github.com/AnaIitico/loan_qualifier_app](https://github.c
 [license-url]:  -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/josetollinchi/
+[qualified-loan-url]: https://github.com/AnaIitico/loan_qualifier_app/tree/main/images/qualified_loan.JPG
+[unqualified-loan-url]: https://github.com/AnaIitico/loan_qualifier_app/tree/main/images/unqualified_loan.JPG
+[enter-name-url]: https://github.com/AnaIitico/loan_qualifier_app/tree/main/images/enter_name.JPG

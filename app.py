@@ -98,7 +98,7 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     print(f"Found {len(bank_data_filtered)} qualifying loans")
 
     return bank_data_filtered
-    
+
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
@@ -122,7 +122,10 @@ def save_qualifying_loans(qualifying_loans):
         print("")
         save_qualifying_loans(qualifying_loans)
     
-    output_path = Path(f"data/{name}")
+    if len(qualifying_loans) == 0:
+        output_path = Path(f"results/unqualified_loans/{name}")
+    else:
+        output_path = Path(f"results/qualified_loans/{name}")
     
     return save_csv(output_path, qualifying_loans)
 
