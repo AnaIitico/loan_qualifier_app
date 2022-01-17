@@ -52,4 +52,4 @@ def save_csv(output_path, qualifying_loans):
         if os.path.isfile(output_path):
             print(f'The file {csvfile.name} was successfully written')
         else:
-            print('The file {output_path} was not written')
+            print(f'The file {output_path} was not written')

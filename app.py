@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from ast import Break
 import csv
 import sys
 import fire
@@ -102,32 +103,41 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
+        Requires confirmation before saving the file
         Provides instructions for the file naming convention
+        Includes logic to avoid empty filenames
         
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # Enter the new file name to be saved by the application
-    name = questionary.text("""Enter the new file name by following these rules:
-    1. Use lowercase letters
-    2. Don't leave empty spaces between words.
-    3. Use the underscore _ as a separator.
-    4. Include .csv at the end of the name.
-    5. For example: john_doe.csv"""
-    ).ask()
+    #Ask if the user wants to save the file
+    question = questionary.confirm("Would you like to save the new file?").ask()
 
-    if name == "":
+    if question == False:
         print("")
-        print("You must enter a file name")
-        print("")
-        save_qualifying_loans(qualifying_loans)
-    
-    if len(qualifying_loans) == 0:
-        output_path = Path(f"results/unqualified_loans/{name}")
+        print("Thank you for using the app")
+        quit()
     else:
-        output_path = Path(f"results/qualified_loans/{name}")
-    
-    return save_csv(output_path, qualifying_loans)
+        # Enter the new file name to be saved by the application
+        name = questionary.text("""Enter the new file name by following these rules:
+        1. Use lowercase letters
+        2. Don't leave empty spaces between words.
+        3. Use the underscore _ as a separator.
+        4. Include .csv at the end of the name.
+        5. For example: john_doe.csv"""
+        ).ask()
+
+        if name == "":
+            print("")
+            print("You must enter a file name")
+            print("")
+            save_qualifying_loans(qualifying_loans)
+        
+        if len(qualifying_loans) == 0:
+            output_path = Path(f"results/unqualified_loans/{name.lower()}")
+        else:
+            output_path = Path(f"results/qualified_loans/{name.lower()}")
+            save_csv(output_path, qualifying_loans)
 
 
 def run():

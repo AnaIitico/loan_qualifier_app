@@ -85,6 +85,11 @@ This project is a loan application that prompts the user to enter financial and 
 
 Here are some screenshots and code snippets of the working app
 
+Confirm Dialogue
+
+![Confirm Dialogue Screen Shot][confirm-screenshot]
+
+
 Qualified Loans
 ![Qualified Loan Screen Shot][qualifiedloan-screenshot]
 
@@ -100,32 +105,41 @@ Enter Name
   ```sh
   def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
+        Requires confirmation before saving the file
         Provides instructions for the file naming convention
+        Includes logic to avoid empty filenames
         
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-   # Enter the new file name to be saved by the application
-    name = questionary.text("""Enter the new file name by following these rules:
-    1. Use lowercase letters
-    2. Don't leave empty spaces between words.
-    3. Use the underscore _ as a separator.
-    4. Include .csv at the end of the name.
-    5. For example: john_doe.csv"""
-    ).ask()
+    #Ask if the user wants to save the file
+    question = questionary.confirm("Would you like to save the new file?").ask()
 
-    if name == "":
+    if question == False:
         print("")
-        print("You must enter a file name")
-        print("")
-        save_qualifying_loans(qualifying_loans)
-    
-    if len(qualifying_loans) == 0:
-        output_path = Path(f"results/unqualified_loans/{name}")
+        print("Thank you for using the app")
+        quit()
     else:
-        output_path = Path(f"results/qualified_loans/{name}")
-    
-    return save_csv(output_path, qualifying_loans)
+        # Enter the new file name to be saved by the application
+        name = questionary.text("""Enter the new file name by following these rules:
+        1. Use lowercase letters
+        2. Don't leave empty spaces between words.
+        3. Use the underscore _ as a separator.
+        4. Include .csv at the end of the name.
+        5. For example: john_doe.csv"""
+        ).ask()
+
+        if name == "":
+            print("")
+            print("You must enter a file name")
+            print("")
+            save_qualifying_loans(qualifying_loans)
+        
+        if len(qualifying_loans) == 0:
+            output_path = Path(f"results/unqualified_loans/{name.lower()}")
+        else:
+            output_path = Path(f"results/qualified_loans/{name.lower()}")
+            save_csv(output_path, qualifying_loans)
    ```
 
 * 
@@ -152,7 +166,7 @@ Enter Name
         if os.path.isfile(output_path):
             print(f'The file {csvfile.name} was successfully written')
         else:
-            print('The file {output_path} was not written')
+            print(f'The file {output_path} was not written')
   ```
 
 See the [open issues](https://github.com/AnaIitico/loan_qualifier_app/issues) for a list of proposed features (and known issues).
@@ -201,6 +215,7 @@ Project Link: [https://github.com/AnaIitico/loan_qualifier_app](https://github.c
 [license-url]:  -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/josetollinchi/
+[confirm-screenshot]: /images/confirm.JPG
 [qualifiedloan-screenshot]: /images/qualified_loan.JPG
 [unqualifiedloan-screenshot]: /images/unqualified_loan.JPG
 [entername-screenshot]: /images/enter_name.JPG
